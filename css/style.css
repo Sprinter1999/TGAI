@@ -8,27 +8,27 @@
 
 /* 页面背景 */
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0c1929 0%, #1a365d 100%);
   min-height: 100vh;
   color: #e2e8f0;
 }
 
 /* 导航栏样式 */
 nav {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(12, 25, 41, 0.98);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  border-bottom: 2px solid #3b82f6;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -40,7 +40,7 @@ nav a {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -52,18 +52,18 @@ nav a::after {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: #3b82f6;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 nav a:hover {
   color: #fff;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(59, 130, 246, 0.15);
 }
 
 nav a:hover::after {
-  width: 80%;
+  width: 100%;
 }
 
 /* 内容容器 */
@@ -71,11 +71,11 @@ nav a:hover::after {
   max-width: 1200px;
   margin: 3rem auto;
   padding: 3rem 4rem;
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(26, 54, 93, 0.7);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 /* 标题样式 */
@@ -85,11 +85,11 @@ h1 {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
 
 h2 {
@@ -98,7 +98,7 @@ h2 {
   font-size: 1.8rem;
   font-weight: 600;
   padding-left: 1.5rem;
-  border-left: 4px solid #6366f1;
+  border-left: 4px solid #3b82f6;
   position: relative;
 }
 
@@ -110,7 +110,7 @@ h2::before {
   transform: translateY(-50%);
   width: 8px;
   height: 8px;
-  background: #8b5cf6;
+  background: #60a5fa;
   border-radius: 50%;
   margin-left: -6px;
 }
@@ -136,11 +136,11 @@ ul, ol {
 
 /* 编委卡片样式 */
 .board-member {
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 2rem;
   margin-bottom: 1.5rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -153,15 +153,15 @@ ul, ol {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .board-member:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
 }
 
 .board-member:hover::before {
@@ -182,11 +182,11 @@ ul, ol {
 
 /* 论文卡片样式 */
 .paper-card {
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 2.5rem;
   margin-bottom: 2rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -199,15 +199,15 @@ ul, ol {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .paper-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
 }
 
 .paper-card:hover::before {
@@ -217,18 +217,18 @@ ul, ol {
 .paper-card h2 {
   margin-top: 0;
   font-size: 1.5rem;
-  color: #6366f1;
+  color: #3b82f6;
 }
 
 /* 关键信息列表样式 */
 .key-info {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.15) 100%);
   color: #e2e8f0;
   padding: 2rem 2.5rem;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-top: 2rem;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
 }
 
 .key-info li {
@@ -243,21 +243,21 @@ ul, ol {
   content: '▸';
   position: absolute;
   left: 0;
-  color: #8b5cf6;
+  color: #60a5fa;
   font-weight: bold;
 }
 
 /* 链接样式 */
 a {
-  color: #8b5cf6;
+  color: #60a5fa;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
 
 a:hover {
-  color: #a855f7;
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  color: #93c5fd;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
 }
 
 /* 强调文本 */
@@ -350,20 +350,20 @@ strong {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #0c1929;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  background: linear-gradient(180deg, #3b82f6, #60a5fa);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #8b5cf6, #a855f7);
+  background: linear-gradient(180deg, #60a5fa, #93c5fd);
 }
 
 /* 选中文本样式 */
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(59, 130, 246, 0.3);
   color: #fff;
 }
