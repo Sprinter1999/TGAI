@@ -5,6 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latest Accepted Papers - TGAI</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 自定义折叠样式 */
+    .paper-item {
+      border: 1px solid #dee2e6;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .paper-header {
+      background: #f8f9fa;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    
+    .paper-header:hover {
+      background: #e9ecef;
+    }
+    
+    .paper-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #0056b3;
+    }
+    
+    .paper-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    
+    .paper-content {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .paper-content.expanded {
+      padding: 1.5rem;
+      max-height: 500px;
+    }
+    
+    .toggle-btn {
+      background: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .toggle-btn:hover {
+      background: #004494;
+    }
+    
+    .toggle-btn.expanded {
+      background: #6c757d;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -18,28 +88,73 @@
   </nav>
 
   <div class="container">
-    <h1>Latest Accepted Papers (January 2026)</h1>
+    <h1>Latest Accepted Papers</h1>
     
-    <div class="paper-card">
-      <h2>Paper 1</h2>
-      <p><strong>Title:</strong> Scalable Diffusion Models for High-Resolution Image Generation</p>
-      <p><strong>Authors:</strong> John Doe (MIT), Jane Smith (Stanford University)</p>
-      <p><strong>Abstract:</strong> This paper presents a novel diffusion model architecture that enables efficient generation of high-resolution images (up to 4K) with reduced computational cost. Our approach achieves state-of-the-art FID scores on multiple benchmarks while maintaining fast inference times.</p>
+    <!-- Paper 1 -->
+    <div class="paper-item">
+      <div class="paper-header">
+        <div>
+          <h3>Scalable Diffusion Models for High-Resolution Image Generation</h3>
+          <div class="paper-meta">
+            <span><strong>Authors:</strong> John Doe (MIT), Jane Smith (Stanford University)</span>
+            <span><strong>Accepted:</strong> 2026-01-15</span>
+          </div>
+        </div>
+        <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
+      </div>
+      <div class="paper-content">
+        <p><strong>Abstract:</strong> This paper presents a novel diffusion model architecture that enables efficient generation of high-resolution images (up to 4K) with reduced computational cost. Our approach achieves state-of-the-art FID scores on multiple benchmarks while maintaining fast inference times.</p>
+      </div>
     </div>
-
-    <div class="paper-card">
-      <h2>Paper 2</h2>
-      <p><strong>Title:</strong> Efficient Fine-Tuning Strategies for Large Language Models</p>
-      <p><strong>Authors:</strong> Bob Johnson (Harvard University), Alice Lee (UC Berkeley)</p>
-      <p><strong>Abstract:</strong> We propose a comprehensive study of parameter-efficient fine-tuning methods for large language models, including LoRA, adapters, and prompt tuning. Our analysis provides practical guidelines for selecting optimal fine-tuning strategies across different downstream tasks and model sizes.</p>
+    
+    <!-- Paper 2 -->
+    <div class="paper-item">
+      <div class="paper-header">
+        <div>
+          <h3>Efficient Fine-Tuning Strategies for Large Language Models</h3>
+          <div class="paper-meta">
+            <span><strong>Authors:</strong> Bob Johnson (Harvard University), Alice Lee (UC Berkeley)</span>
+            <span><strong>Accepted:</strong> 2026-01-10</span>
+          </div>
+        </div>
+        <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
+      </div>
+      <div class="paper-content">
+        <p><strong>Abstract:</strong> We propose a comprehensive study of parameter-efficient fine-tuning methods for large language models, including LoRA, adapters, and prompt tuning. Our analysis provides practical guidelines for selecting optimal fine-tuning strategies across different downstream tasks and model sizes.</p>
+      </div>
     </div>
-
-    <div class="paper-card">
-      <h2>Paper 3</h2>
-      <p><strong>Title:</strong> Multimodal Generative AI for Cross-Modal Content Creation</p>
-      <p><strong>Authors:</strong> Mike Wang (Johns Hopkins University), Lisa Zhang (Mayo Clinic)</p>
-      <p><strong>Abstract:</strong> This work introduces a unified multimodal generative framework that seamlessly integrates text, image, and audio generation. Our model demonstrates superior performance in cross-modal tasks such as text-to-image, image-to-text, and audio-visual synthesis.</p>
+    
+    <!-- Paper 3 -->
+    <div class="paper-item">
+      <div class="paper-header">
+        <div>
+          <h3>Multimodal Generative AI for Cross-Modal Content Creation</h3>
+          <div class="paper-meta">
+            <span><strong>Authors:</strong> Mike Wang (Johns Hopkins University), Lisa Zhang (Mayo Clinic)</span>
+            <span><strong>Accepted:</strong> 2026-01-05</span>
+          </div>
+        </div>
+        <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
+      </div>
+      <div class="paper-content">
+        <p><strong>Abstract:</strong> This work introduces a unified multimodal generative framework that seamlessly integrates text, image, and audio generation. Our model demonstrates superior performance in cross-modal tasks such as text-to-image, image-to-text, and audio-visual synthesis.</p>
+      </div>
     </div>
   </div>
+
+  <script>
+    function togglePaper(btn) {
+      const content = btn.closest('.paper-item').querySelector('.paper-content');
+      content.classList.toggle('expanded');
+      
+      if (content.classList.contains('expanded')) {
+        btn.textContent = 'Hide Abstract';
+        btn.classList.add('expanded');
+      } else {
+        btn.textContent = 'Show Abstract';
+        btn.classList.remove('expanded');
+      }
+    }
+  </script>
 </body>
 </html>
