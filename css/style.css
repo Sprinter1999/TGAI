@@ -16,7 +16,7 @@ body {
 /* 导航栏样式 */
 nav {
   background: #fff;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
@@ -27,21 +27,23 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   color: #495057;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 4px;
   transition: all 0.3s ease;
-  position: relative;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -57,8 +59,8 @@ nav a.active {
 /* 内容容器 */
 .container {
   max-width: 1200px;
-  margin: 2.5rem auto;
-  padding: 3rem 4rem;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -68,8 +70,8 @@ nav a.active {
 /* 标题样式 */
 h1 {
   color: #0056b3;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
   line-height: 1.3;
@@ -77,8 +79,8 @@ h1 {
 
 h2 {
   color: #0056b3;
-  margin: 2.5rem 0 1.5rem;
-  font-size: 1.6rem;
+  margin: 2rem 0 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #e9ecef;
@@ -97,35 +99,35 @@ h2::after {
 
 h3 {
   color: #343a40;
-  margin: 1.5rem 0 1rem;
-  font-size: 1.3rem;
+  margin: 1.2rem 0 0.8rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 /* 段落/列表样式 */
 p {
-  line-height: 1.8;
+  line-height: 1.7;
   color: #495057;
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 li {
-  line-height: 1.8;
+  line-height: 1.7;
   color: #495057;
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
 }
 
 ul, ol {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 /* 编委卡片样式 */
 .board-member {
   border: 1px solid #dee2e6;
-  padding: 2rem;
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
   border-radius: 6px;
   background: #fff;
   transition: all 0.3s ease;
@@ -145,8 +147,8 @@ ul, ol {
 }
 
 .board-member:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.1);
   border-color: #0056b3;
 }
 
@@ -155,76 +157,107 @@ ul, ol {
 }
 
 .board-member p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .board-member strong {
   color: #0056b3;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-/* 论文卡片样式 */
-.paper-card {
+/* 论文项目样式 */
+.paper-item {
   border: 1px solid #dee2e6;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-radius: 6px;
-  background: #fff;
+  overflow: hidden;
   transition: all 0.3s ease;
-  position: relative;
 }
 
-.paper-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #0056b3, #007bff);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.paper-header {
+  background: #f8f9fa;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.paper-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
-  border-color: #0056b3;
+.paper-header:hover {
+  background: #e9ecef;
 }
 
-.paper-card:hover::before {
-  opacity: 1;
-}
-
-.paper-card h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
+.paper-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
   color: #0056b3;
-  border-bottom: none;
+  flex: 1;
+  min-width: 200px;
 }
 
-.paper-card h2::after {
-  display: none;
+.paper-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+  width: 100%;
+}
+
+.paper-content {
+  padding: 0 1.2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.paper-content.expanded {
+  padding: 1.2rem;
+  max-height: 500px;
+}
+
+.toggle-btn {
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  background: #004494;
+}
+
+.toggle-btn.expanded {
+  background: #6c757d;
 }
 
 /* 关键信息列表样式 */
 .key-info {
   background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
   color: #fff;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 6px;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 86, 179, 0.2);
 }
 
 .key-info li {
   color: #fff;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  padding-left: 1.2rem;
   position: relative;
 }
 
@@ -259,9 +292,9 @@ strong {
 footer {
   background: #f8f9fa;
   border-top: 1px solid #dee2e6;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: #6c757d;
   font-size: 0.9rem;
 }
@@ -269,34 +302,8 @@ footer {
 /* 响应式设计 */
 @media (max-width: 1024px) {
   .container {
-    padding: 2rem 2.5rem;
-    margin: 2rem 1rem;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem 0;
-  }
-
-  nav a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .container {
     padding: 1.5rem;
-    margin: 1rem;
+    margin: 1.5rem 1rem;
   }
 
   h1 {
@@ -304,12 +311,118 @@ footer {
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
-  .board-member,
-  .paper-card {
-    padding: 1.5rem;
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem 0;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1.2rem;
+    margin: 1rem 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .board-member {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .board-member p {
+    font-size: 0.95rem;
+  }
+
+  .board-member strong {
+    font-size: 1rem;
+  }
+
+  .paper-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .paper-header h3 {
+    font-size: 1rem;
+  }
+
+  .paper-meta {
+    font-size: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .toggle-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .paper-content {
+    padding: 1rem;
+  }
+
+  .key-info {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    margin: 0.8rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .board-member {
+    padding: 1rem;
+  }
+
+  .paper-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .toggle-btn {
+    align-self: flex-end;
   }
 }
 
@@ -330,7 +443,7 @@ footer {
 }
 
 .board-member,
-.paper-card {
+.paper-item {
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
 }
@@ -340,13 +453,13 @@ footer {
 .board-member:nth-child(3) { animation-delay: 0.3s; }
 .board-member:nth-child(4) { animation-delay: 0.4s; }
 
-.paper-card:nth-child(1) { animation-delay: 0.1s; }
-.paper-card:nth-child(2) { animation-delay: 0.2s; }
-.paper-card:nth-child(3) { animation-delay: 0.3s; }
+.paper-item:nth-child(1) { animation-delay: 0.1s; }
+.paper-item:nth-child(2) { animation-delay: 0.2s; }
+.paper-item:nth-child(3) { animation-delay: 0.3s; }
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -355,7 +468,7 @@ footer {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #0056b3, #007bff);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
