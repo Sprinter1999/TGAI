@@ -5,85 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latest Accepted Papers - TGAI</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* 自定义折叠样式 */
-    .paper-item {
-      border: 1px solid #dee2e6;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .paper-header {
-      background: #f8f9fa;
-      padding: 1.2rem 1.5rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease;
-    }
-    
-    .paper-header:hover {
-      background: #e9ecef;
-    }
-    
-    .paper-header h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: #0056b3;
-    }
-    
-    .paper-meta {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #6c757d;
-    }
-    
-    .paper-content {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .paper-content.expanded {
-      padding: 1.5rem;
-      max-height: 500px;
-    }
-    
-    .toggle-btn {
-      background: #0056b3;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    
-    .toggle-btn:hover {
-      background: #004494;
-    }
-    
-    .toggle-btn.expanded {
-      background: #6c757d;
-    }
-  </style>
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="submission.html">Submission Guidelines</a></li>
-      <li><a href="accepted-papers.html">Latest Accepted Papers</a></li>
-      <li><a href="editor-board.html">Editor Board</a></li>
-      <li><a href="reviewer-guidance.html">Reviewer Guidance</a></li>
+      <li class="dropdown">
+        <a href="#">About ▾</a>
+        <div class="dropdown-content">
+          <a href="aims-scope.html">Aims and Scope</a>
+          <a href="journal-metrics.html">Journal Metrics</a>
+          <a href="privacy-statement.html">Privacy Statement</a>
+          <a href="indexing-abstracting.html">Indexing and Abstracting</a>
+          <a href="contact.html">Contact Information</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="accepted-papers.html">Accepted Papers ▾</a>
+        <div class="dropdown-content">
+          <a href="accepted-papers.html">Current Issue</a>
+          <a href="all-issues.html">All Issues</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contribute ▾</a>
+        <div class="dropdown-content">
+          <a href="author-guidelines.html">Author Guidelines</a>
+          <a href="open-access.html">Open Access</a>
+          <a href="apc.html">Article Processing Charge</a>
+          <a href="peer-review.html">Peer Review Process</a>
+          <a href="publishing-ethics.html">Publishing Ethics</a>
+          <a href="reviewer-guidelines.html">Reviewer Guidelines</a>
+          <a href="special-issue-proposal.html">Special Issue Proposal</a>
+        </div>
+      </li>
+      <li><a href="editor-board.html">Editorial Board</a></li>
     </ul>
   </nav>
 
@@ -91,55 +47,24 @@
     <h1>Latest Accepted Papers</h1>
     
     <!-- Paper 1 -->
+    <!--
     <div class="paper-item">
       <div class="paper-header">
         <div>
-          <h3>Scalable Diffusion Models for High-Resolution Image Generation</h3>
+          <h3>TBD</h3>
           <div class="paper-meta">
-            <span><strong>Authors:</strong> John Doe (MIT), Jane Smith (Stanford University)</span>
-            <span><strong>Accepted:</strong> 2026-01-15</span>
+            <span><strong>Authors:</strong> TBD</span>
+            <span><strong>Accepted:</strong> TBD</span>
           </div>
         </div>
         <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
       </div>
       <div class="paper-content">
-        <p><strong>Abstract:</strong> This paper presents a novel diffusion model architecture that enables efficient generation of high-resolution images (up to 4K) with reduced computational cost. Our approach achieves state-of-the-art FID scores on multiple benchmarks while maintaining fast inference times.</p>
+        <p><strong>Abstract:</strong> TBD</p>
       </div>
     </div>
-    
-    <!-- Paper 2 -->
-    <div class="paper-item">
-      <div class="paper-header">
-        <div>
-          <h3>Efficient Fine-Tuning Strategies for Large Language Models</h3>
-          <div class="paper-meta">
-            <span><strong>Authors:</strong> Bob Johnson (Harvard University), Alice Lee (UC Berkeley)</span>
-            <span><strong>Accepted:</strong> 2026-01-10</span>
-          </div>
-        </div>
-        <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
-      </div>
-      <div class="paper-content">
-        <p><strong>Abstract:</strong> We propose a comprehensive study of parameter-efficient fine-tuning methods for large language models, including LoRA, adapters, and prompt tuning. Our analysis provides practical guidelines for selecting optimal fine-tuning strategies across different downstream tasks and model sizes.</p>
-      </div>
-    </div>
-    
-    <!-- Paper 3 -->
-    <div class="paper-item">
-      <div class="paper-header">
-        <div>
-          <h3>Multimodal Generative AI for Cross-Modal Content Creation</h3>
-          <div class="paper-meta">
-            <span><strong>Authors:</strong> Mike Wang (Johns Hopkins University), Lisa Zhang (Mayo Clinic)</span>
-            <span><strong>Accepted:</strong> 2026-01-05</span>
-          </div>
-        </div>
-        <button class="toggle-btn" onclick="togglePaper(this)">Show Abstract</button>
-      </div>
-      <div class="paper-content">
-        <p><strong>Abstract:</strong> This work introduces a unified multimodal generative framework that seamlessly integrates text, image, and audio generation. Our model demonstrates superior performance in cross-modal tasks such as text-to-image, image-to-text, and audio-visual synthesis.</p>
-      </div>
-    </div>
+    -->
+    <p><em>No papers accepted yet for the current issue.</em></p>
   </div>
 
   <script>
